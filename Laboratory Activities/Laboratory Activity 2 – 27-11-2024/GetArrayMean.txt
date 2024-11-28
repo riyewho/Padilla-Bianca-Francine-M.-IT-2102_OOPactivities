@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ArrayMean {
+    
+    // Function to calculate the mean of an integer array
+    public static double getArrayMean(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return (double) sum / arr.length; // Return the mean as a double
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Ask for the number of elements
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        // Create an array to store the integers
+        int[] numbers = new int[n];
+        
+        // Ask for n integers, one by one
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter a number: ");
+            numbers[i] = scanner.nextInt();
+        }
+        
+        // Calculate the mean using the getArrayMean function
+        double mean = getArrayMean(numbers);
+        
+        // Print the result with 2 decimal places
+        System.out.printf("The mean of the entered integers is: %.2f%n", mean);
+        
+        scanner.close();
+    }
+}
